@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data & Analytics Lab</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        #left-frame {
+            width: 20%;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        #right-frame {
+            width: 80%;
+            flex-grow: 1;
+            overflow: hidden;
+        }
+        #logo {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+        }
+        li {
+            width: 100%;
+            margin: 5px 0;
+        }
+        a {
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-align: center;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #d0d0d0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="left-frame">
+        <!-- Replace the src below with the actual path to the generated logo -->
+        <img id="logo" src="C:\Users\atsuv\OneDrive\Documents\my web sites\Logo.webp" alt="Data & Analytics Lab Logo">
+        <ul>
+            <li><a href="https://github.com/atsuvovor/Pub_Data_Analytics_Project/blob/main/CyberThreat_Insight_V5.ipynb" target="right-frame">Cyber Threat Insight</a></li>
+            <li><a href="https://Sample Data Analytics Platform Design_v1.pdf" target="right-frame">Data Analytics Platform Design</a></li>
+            <li><a href="https://Sample Cybersecurity Key Threat Indicators.pdf" target="right-frame">Notebook 3</a></li>
+        </ul>
+        <!-- Add a button to refresh the right frame -->
+        <button onclick="refreshRightFrame()">Refresh</button>
+    </div>
+    <div id="right-frame">
+        <iframe name="right-frame"></iframe>
+    </div>
+
+    <script>
+        // JavaScript function to refresh the right frame
+        function refreshRightFrame() {
+            const rightFrame = document.querySelector('iframe[name="right-frame"]');
+            if (rightFrame.src) {
+                rightFrame.contentWindow.location.reload();
+            } else {
+                alert('No content to refresh!');
+            }
+        }
+    </script>
+</body>
+</html>
